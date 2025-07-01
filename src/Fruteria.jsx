@@ -65,13 +65,13 @@ function Fruteria() {
                 </Col>
 
                 {/* Right column: Cart */}
-                <Col md={4}>
+                <Col md={4} >
                     <h3>Tu cesta</h3>
                     {cart.length === 0 ? (
                         <p>Aún no has añadido productos.</p>
                     ) : (
                         <>
-                            <div className="d-flex flex-column gap-3">
+                            <div className="d-flex flex-column gap-2" style={{padding: "1.5rem 1rem", borderRadius: "25px", backgroundColor:"rgb(111, 148, 111, 0.5)" }}>
                                 {cart.map(item => (
                                     <Card key={item.id} style={{ backgroundColor: 'lightblue' }}>
                                         <Card.Body>

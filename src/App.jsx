@@ -6,11 +6,11 @@ function App() {
 
   return (
     <>
-      <header>
+      <header className="bg-dark text-white">
         <h1>¡Bienvenido a nuetra Fruteria!</h1> <br />
         <p>Actualmente son las: </p> <Timer />
       </header>
-      <Fruteria />
+      <Fruteria/>
     </>
   )
 }
