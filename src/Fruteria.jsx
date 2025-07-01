@@ -1,9 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import productes from './productes.json';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 
+function Timer() {
+    const [date, setDate] = useState(0);
+
+    useEffect(() => {
+
+        const interval = setInterval(() => {
+            const ahora = new Date()
+        setDate(`${ahora.getHours()}h ${ahora.getMinutes()}m ${ahora.getSeconds()}s`)
+        }, 1000);
+
+        return () => clearInterval(interval);
+        
+    }, []); 
+
+    return <h4>{date}</h4>;
+}
+
 function Fruteria() {
     const [cart, setCart] = useState([]);
+    const fecha = new Date()
 
     function deleteItem(productId) {
         setCart(prevCart => prevCart.filter(item => item.id !== productId));
@@ -80,4 +98,4 @@ function Fruteria() {
     );
 }
 
-export default Fruteria;
+export {Fruteria, Timer};
